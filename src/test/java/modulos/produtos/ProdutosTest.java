@@ -1,8 +1,10 @@
 package modulos.produtos;
 
+import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import paginas.AdicionarProduto;
 
@@ -49,9 +51,10 @@ public class ProdutosTest {
 
         //Validar se os dois registros foram adicionados ao carrinho
 
-        //String test = navegador.findElement(By.cssSelector("span[class=\"mini-cart-items\"]").getClass();
-        //int qtdProdutoCarrinho = Integer.parseInt(test);
-       // System.out.println(test);
+        String test = navegador.findElement(By.xpath("//*[@id=\"cart\"]/a/span[3]")).getText();
+       // int qtdProdutoCarrinho = Integer.parseInt(test);
+        System.out.println(test);
+        Assertions.assertEquals(2, test);
     }
 
     @AfterEach
